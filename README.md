@@ -1,0 +1,1 @@
+# static_terms_and_condition
