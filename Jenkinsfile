@@ -9,13 +9,15 @@ pipeline {
             }
         }
         stage("Git Clone") {
-            steps{
+            steps {
                 git branch: 'master',
                     url: 'https://github.com/balmiki-badatya/static_terms_and_condition.git'
             }
         }
         stage("Push to s3") {
-            sh 'aws s3 cp index.html s3://static-terms-condition --region us-west-1'
+            steps {
+                sh 'aws s3 cp index.html s3://static-terms-condition --region us-west-1'
+            }
         }
     }
 
